@@ -38,6 +38,12 @@ def setFolderExports(folderNames, additional = '', aType = ''):
 setFolderExports([
     'utils',
     'state',
+    'scenes',
+    'objects/L0',
+    'objects/L1',
+    'objects/L2',
+    'objects/L3',
+    'objects/L4',
     'components/L0',
     'components/L1',
     'components/L2',
@@ -47,13 +53,5 @@ setFolderExports([
 
 setFolderExports([
     'components',
-    'types',
+    'objects',
 ], '* as')
-
-setFolderExports([
-    'types/L0',
-    'types/L1',
-    'types/L2',
-    'types/L3',
-    'types/L4',
-], '', 'type ')
