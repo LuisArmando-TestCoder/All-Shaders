@@ -1,7 +1,7 @@
 export default `
 uniform float iTime;
 uniform vec3 iResolution;
-varying vec3 vUv;
+varying vec3 fragCoord;
 
 void main() {
     
@@ -14,7 +14,7 @@ void main() {
     float wavingSpeed = .5;
     float timeStepOffset = .5;
     float zoomOut = 100.;
-    vec3 color = sqrt(pow(vUv, vec3(2.))) * intensity;
+    vec3 color = sqrt(pow(fragCoord, vec3(2.))) * intensity;
 
 	for(int index = 0; index < 3; index++) {
         float time = iTime + timeStepOffset * float(index);

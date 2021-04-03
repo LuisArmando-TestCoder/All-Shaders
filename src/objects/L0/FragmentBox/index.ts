@@ -1,7 +1,5 @@
 import * as THREE from 'three'
 import { actions } from 'scene-preset'
-import fragmentShader from './fragmentShader'
-import vertexShader from './vertexShader'
 
 export default ({
     x = 0,
@@ -10,6 +8,8 @@ export default ({
     width = 2,
     height = 2,
     depth = .1,
+    fragmentShader = '',
+    vertexShader = '',
 }) => {
     const material = new THREE.ShaderMaterial({
         fragmentShader,
