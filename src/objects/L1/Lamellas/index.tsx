@@ -21,7 +21,7 @@ export default ({
             x: 1.125 * (
                 index - amount / 2
             ),
-            y: height * y - 1,
+            y: height * y + 1,
             z: 10,
             fragmentShader,
             vertexShader

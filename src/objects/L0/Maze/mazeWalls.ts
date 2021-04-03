@@ -169,8 +169,10 @@ function getMultipleDeletedOccurrences(array) {
     return multipleDeletedOccurrences
 }
 
-export function getFilteredBranchedSquaresMaze({ limit, x, y }) {
-    const square = getSquare({ x, y })
+export function getFilteredBranchedSquaresMaze({
+    limit, x, y, size
+}) {
+    const square = getSquare({x, y, size})
 
     return [
         ...new Set(
@@ -185,7 +187,7 @@ export function getFilteredBranchedSquaresMaze({ limit, x, y }) {
             .map(JSON.stringify)
         )
     ]
-        .map(JSON.parse as any)
+    .map(JSON.parse as any)
 }
 
 export function getMazeWalls(maze) {
@@ -197,4 +199,12 @@ export function getMazeWalls(maze) {
                 )
             }).flat()
     ).map(JSON.parse as any)
+    .map(
+        ({width, height, x, y}: any) => ({
+            width,
+            height,
+            x: x + Math.floor(width / 2),
+            y: y + Math.floor(height / 2)
+        })
+    )
 }
